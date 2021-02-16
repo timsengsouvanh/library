@@ -11,7 +11,10 @@ function Book(title, author, pages, read){
 }
 
 function addBookToLibrary() {
+    //user creates book object using constructor
     
+    //push into array myLibrary []
+    //run function on add book mouse click
 }
 
 
