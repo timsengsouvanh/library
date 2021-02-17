@@ -17,9 +17,8 @@ let myLibrary = [
 
 function addBookToLibrary() {
     //user creates book object using constructor
-
     //push into array myLibrary []
-    //run function on add book mouse click
+    refresh()
 }
 
 function createBook(obj){
@@ -37,7 +36,6 @@ function createBook(obj){
     book.appendChild(sub)
     book.appendChild(sub2)
     book.appendChild(sub3)
-    
     };
 
 function refresh(){
@@ -47,7 +45,9 @@ myLibrary.forEach(obj => {
 
 refresh()
 
+document.querySelector('#add').addEventListener('click', () => {
+ prompt('title?', 'title')
+   
+})
 
-// let HP = new Book('Harry Potter', 'J.K Rowling', '400', 'I have read it')
-let FearandLoathing = new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'I have read it')
 

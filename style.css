@@ -18,7 +18,22 @@ html, body {
 
 header {
     font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#library {
     text-decoration: underline;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 #bookarea {
@@ -26,20 +41,29 @@ header {
     height: 80%;
     padding: 15px 15px 15px 15px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .book {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 20%;
     height: 45%;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 .booktitle {
     font-size: 1.4em;
+    border: 2px solid black;
+    font-weight: 600;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
