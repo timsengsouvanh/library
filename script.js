@@ -10,7 +10,8 @@ function Book(title, author, pages, read){
 
 let myLibrary = [
     new Book('Harry Potter', 'J.K Rowling', '400', 'I have read it'),
-    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'I have read it')
+    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'I have read it'),
+    new Book('The Power of Now', 'Eckhart Tolle', '150', 'I have read it')
 
 ];
 
@@ -26,15 +27,7 @@ function addBookToLibrary() {
 
 
 
-function createBook(x){
-    book.classList.add('book')
-    bookarea.appendChild(book)
-    book.appendChild(sub)
-    sub.innerHTML = [x].title + ' ' + [x].author + ' ' + [x].pages      
-    };
-
-
-myLibrary.forEach(obj => {
+function createBook(obj){
     let book = document.createElement('div')
     let sub = document.createElement('sub')
     let bookarea = document.querySelector('#bookarea')
@@ -43,6 +36,11 @@ myLibrary.forEach(obj => {
     sub.innerHTML = obj.title + ' ' + obj.author + ' ' + obj.pages
     book.appendChild(sub)
     
+    };
+
+
+myLibrary.forEach(obj => {
+    createBook(obj)
 })
 
 
