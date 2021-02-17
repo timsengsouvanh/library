@@ -31,11 +31,15 @@ header {
 
 .book {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 20%;
     height: 45%;
     border: 1px solid black;
+}
+
+.booktitle {
+    font-size: 1.4em;
 }
