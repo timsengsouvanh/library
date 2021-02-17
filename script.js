@@ -26,20 +26,21 @@ function addBookToLibrary() {
 
 
 
-function createBook(obj){
+function createBook(x){
     book.classList.add('book')
     bookarea.appendChild(book)
     book.appendChild(sub)
-    sub.innerHTML = myLibrary[obj].title + ' ' + myLibrary[obj].author + ' ' + myLibrary[obj].pages      
+    sub.innerHTML = [x].title + ' ' + [x].author + ' ' + [x].pages      
     };
 
-    
+
 myLibrary.forEach(obj => {
     let book = document.createElement('div')
     let sub = document.createElement('sub')
     let bookarea = document.querySelector('#bookarea')
     book.classList.add('book')
     bookarea.appendChild(book)
+    sub.innerHTML = obj.title + ' ' + obj.author + ' ' + obj.pages
     book.appendChild(sub)
     
 })
