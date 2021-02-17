@@ -46,8 +46,13 @@ myLibrary.forEach(obj => {
 refresh()
 
 document.querySelector('#add').addEventListener('click', () => {
- prompt('title?', 'title')
-   
+document.querySelector('#modal').classList.add('active') 
+document.querySelector('#overlay').classList.add('active')   
+})
+
+document.querySelector('#close').addEventListener('click', () => {
+document.querySelector('#modal').classList.remove('active') 
+document.querySelector('#overlay').classList.remove('active')   
 })
 
 
