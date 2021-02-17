@@ -23,19 +23,26 @@ function addBookToLibrary() {
     //push into array myLibrary []
     //run function on add book mouse click
 }
-let book = document.createElement('div')
-let sub = document.createElement('sub')
-let bookarea = document.querySelector('#bookarea')
 
 
-function createBook(x){
+
+function createBook(obj){
     book.classList.add('book')
     bookarea.appendChild(book)
     book.appendChild(sub)
-    sub.innerHTML = myLibrary[x].title + ' ' + myLibrary[x].author + ' ' + myLibrary[x].pages      
+    sub.innerHTML = myLibrary[obj].title + ' ' + myLibrary[obj].author + ' ' + myLibrary[obj].pages      
     };
 
-createBook(0)
+    
+myLibrary.forEach(obj => {
+    let book = document.createElement('div')
+    let sub = document.createElement('sub')
+    let bookarea = document.querySelector('#bookarea')
+    book.classList.add('book')
+    bookarea.appendChild(book)
+    book.appendChild(sub)
+    
+})
 
 
 // let HP = new Book('Harry Potter', 'J.K Rowling', '400', 'I have read it')
