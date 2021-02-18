@@ -53,7 +53,10 @@ document.querySelector('#overlay').classList.add('active')
 
 document.querySelector('#close').addEventListener('click', () => {
 document.querySelector('#modal').classList.remove('active') 
-document.querySelector('#overlay').classList.remove('active')   
+document.querySelector('#overlay').classList.remove('active')
+document.querySelectorAll("input").forEach(input => {
+    input.value = ""
+})   
 })
 
 

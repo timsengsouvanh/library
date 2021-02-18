@@ -98,6 +98,11 @@ button:hover {
     align-items: center;
     justify-content: space-around;
 }
+
+#modal-add-book {
+    flex: 2;
+}
+
 #overlay {
     position: fixed;
     opacity: 0;
