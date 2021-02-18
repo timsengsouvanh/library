@@ -12,13 +12,16 @@ let myLibrary = [
     new Book('Harry Potter', 'J.K Rowling', '400', 'I have read it'),
     new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'I have read it'),
     new Book('The Power of Now', 'Eckhart Tolle', '150', 'I have read it')
-
 ];
 
 function addBookToLibrary() {
-    //user creates book object using constructor
-    //push into array myLibrary []
+    let a = document.querySelector('.title')
+    let newBook = new Book(a) //error here, need to make a into a string first
+    myLibrary.push(newBook)
     refresh()
+    document.querySelectorAll("input").forEach(input => {
+        input.value = ""
+    })   
 }
 
 function createBook(obj){
@@ -39,12 +42,12 @@ function createBook(obj){
     };
 
 function refresh(){
+
 myLibrary.forEach(obj => {
     createBook(obj)
 })}
 
 refresh()
-
 
 document.querySelector('#add').addEventListener('click', () => {
 document.querySelector('#modal').classList.add('active') 
@@ -59,4 +62,7 @@ document.querySelectorAll("input").forEach(input => {
 })   
 })
 
+document.querySelector('#modal-add-book').addEventListener('click', () => {
+    addBookToLibrary()
+})
 
