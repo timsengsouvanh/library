@@ -15,10 +15,14 @@ let myLibrary = [
 ];
 
 function addBookToLibrary() {
-    let a = document.querySelector('.title')
-    let newBook = new Book(a) //error here, need to make a into a string first
+    let title = document.querySelector('#titleinput').value
+    let author = document.querySelector('#authorinput').value
+    let pages = document.querySelector('#pagesinput').value
+    let newBook = new Book(title, author, pages) //error here, need to make a into a string first
     myLibrary.push(newBook)
+    clear()
     refresh()
+    
     document.querySelectorAll("input").forEach(input => {
         input.value = ""
     })   
@@ -49,6 +53,11 @@ myLibrary.forEach(obj => {
 
 refresh()
 
+
+function clear(){
+    document.querySelectorAll('.book').forEach(book => book.remove(''));
+}
+
 document.querySelector('#add').addEventListener('click', () => {
 document.querySelector('#modal').classList.add('active') 
 document.querySelector('#overlay').classList.add('active')   
@@ -62,7 +71,7 @@ document.querySelectorAll("input").forEach(input => {
 })   
 })
 
-document.querySelector('#modal-add-book').addEventListener('click', () => {
-    addBookToLibrary()
-})
+// document.querySelector('#modal-add-book').addEventListener('click', () => {
+//     addBookToLibrary()
+// })
 
