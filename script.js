@@ -22,7 +22,8 @@ function addBookToLibrary() {
     myLibrary.push(newBook)
     clear()
     refresh()
-    
+    document.querySelector('#modal').classList.remove('active') 
+    document.querySelector('#overlay').classList.remove('active')
     document.querySelectorAll("input").forEach(input => {
         input.value = ""
     })   
@@ -70,6 +71,8 @@ document.querySelectorAll("input").forEach(input => {
     input.value = ""
 })   
 })
+
+
 
 // document.querySelector('#modal-add-book').addEventListener('click', () => {
 //     addBookToLibrary()
