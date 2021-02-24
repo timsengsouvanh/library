@@ -63,6 +63,11 @@ button:hover {
     font-weight: 600;
 }
 
+.read {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .modal {
     position: fixed;
     top: 50%;
