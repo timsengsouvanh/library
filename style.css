@@ -27,6 +27,13 @@ header {
 
 #library {
     font-size: 2.5rem;
+    border: 3px solid white;
+    padding: 5px 10px 5px 10px;
+}
+
+.readdel {
+    display: flex;
+    justify-content: space-between;
 }
 
 button {
@@ -71,7 +78,7 @@ button:hover {
 
 .read {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .modal {

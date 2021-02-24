@@ -37,6 +37,8 @@ function createBook(obj){
     let sub4 = document.createElement('div')
     let sub5 = document.createElement('div')
     let sub6 = document.createElement('input')
+    let del = document.createElement('button')
+    let sub7 = document.createElement('div')
     sub6.setAttribute('type', 'checkbox')
     let bookarea = document.querySelector('#bookarea')
     book.classList.add('book')
@@ -45,14 +47,19 @@ function createBook(obj){
     sub2.innerHTML = obj.author
     sub3.innerHTML = obj.pages + ' ' + 'pages'
     sub5.innerHTML = 'Read'
+    del.innerHTML = '&times;'
     sub4.classList.add('read')
     sub.classList.add('booktitle')
+    sub7.classList.add('readdel')
     book.appendChild(sub)
     book.appendChild(sub2)
     book.appendChild(sub3)
     book.appendChild(sub4)
-    sub4.appendChild(sub5)
-    sub4.appendChild(sub6)
+    sub4.appendChild(del)
+    sub4.appendChild(sub7)
+    sub7.appendChild(sub5)
+    sub7.appendChild(sub6)
+    
     };
 
 function refresh(){
