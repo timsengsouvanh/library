@@ -9,16 +9,16 @@ function Book(title, author, pages, read){
 }
 
 let myLibrary = [
-    new Book('Harry Potter', 'J.K Rowling', '400', 'I have read it'),
-    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'I have read it'),
-    new Book('The Power of Now', 'Eckhart Tolle', '150', 'I have read it')
+    new Book('Harry Potter', 'J.K Rowling', '400', 'read'),
+    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
+    new Book('The Power of Now', 'Eckhart Tolle', '150', 'read')
 ];
 
 function addBookToLibrary() {
     let title = document.querySelector('#titleinput').value
     let author = document.querySelector('#authorinput').value
     let pages = document.querySelector('#pagesinput').value
-    let newBook = new Book(title, author, pages) //error here, need to make a into a string first
+    let newBook = new Book(title, author, pages)
     myLibrary.push(newBook)
     clear()
     refresh()

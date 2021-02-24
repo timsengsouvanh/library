@@ -6,6 +6,9 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #A8D0E6;
+    color: rgba(252, 252, 252, 0.897);
+    font-family: Helvetica, sans-serif;
 }
 
 #wrapper {
@@ -23,7 +26,7 @@ header {
 }
 
 #library {
-    text-decoration: underline;
+    font-size: 2.5rem;
 }
 
 button {
@@ -31,6 +34,7 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: #F8E9A1;
 }
 
 button:hover {
@@ -39,9 +43,9 @@ button:hover {
 
 
 #bookarea {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 80%;
-    padding: 15px 15px 15px 15px;
+    padding: 70px 15px 15px 15px;
     display: flex;
     justify-content: space-around;
 }
@@ -54,12 +58,14 @@ button:hover {
     justify-content: space-evenly;
     width: 20%;
     height: 45%;
-    border: 3px solid black;
+    /* border: 1px solid black; */
+    background-color: #f76C6C;
+    border-radius: 10px;
 }
 
 .booktitle {
     font-size: 1.4em;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-weight: 600;
 }
 
@@ -76,7 +82,7 @@ button:hover {
     transition: 200ms ease-in-out;
     border: 1px solid black;
     z-index: 10;
-    background-color: white;
+    background-color: #374785;
     width: 300px;
     height: 300px;
     max-width: 80%;
