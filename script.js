@@ -38,6 +38,7 @@ function createBook(obj){
     let sub5 = document.createElement('div')
     let sub6 = document.createElement('input')
     let del = document.createElement('button')
+    del.setAttribute('data', this.title)
     let sub7 = document.createElement('div')
     sub6.setAttribute('type', 'checkbox')
     let bookarea = document.querySelector('#bookarea')
@@ -51,6 +52,7 @@ function createBook(obj){
     sub4.classList.add('read')
     sub.classList.add('booktitle')
     sub7.classList.add('readdel')
+    del.classList.add('deletebutton')
     book.appendChild(sub)
     book.appendChild(sub2)
     book.appendChild(sub3)
@@ -87,6 +89,17 @@ document.querySelectorAll("input").forEach(input => {
     input.value = ""
 })   
 })
+
+document.querySelectorAll('.deletebutton').forEach(item => {
+    item.addEventListener('click', () => {
+        // let itemindex = this.getAttribute('data-item-index');
+        // myLibrary.splice(itemindex, 1);
+        myLibrary.splice(0,1)
+        clear()
+        refresh()
+       
+    })
+} )
 
 
 
