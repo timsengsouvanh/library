@@ -57,11 +57,11 @@ function createBook(obj){
     sub4.classList.add('read')
     book.appendChild(sub4)
 
-    this.del = document.createElement('button')
-    this.del.innerHTML = '&times;'
+    let del = document.createElement('button')
+    del.innerHTML = '&times;'
     del.classList.add('deletebutton')
-    this.del.setAttribute('data', myLibrary.indexOf(obj))
-    this.del.addEventListener('click', () => {
+    del.setAttribute('data', myLibrary.indexOf(obj))
+    del.addEventListener('click', () => {
         index = del.getAttribute('data')
                 myLibrary.splice(index, 1);
                 console.log(myLibrary)
