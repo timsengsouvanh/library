@@ -1,3 +1,10 @@
+
+let myLibrary = [
+    new Book('Harry Potter', 'J.K Rowling', '400', 'read'),
+    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
+    new Book('The Power of Now', 'Eckhart Tolle', '150', 'read')
+];
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -8,11 +15,6 @@ function Book(title, author, pages, read){
     };
 }
 
-let myLibrary = [
-    new Book('Harry Potter', 'J.K Rowling', '400', 'read'),
-    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
-    new Book('The Power of Now', 'Eckhart Tolle', '150', 'read')
-];
 
 function addBookToLibrary() {
     let title = document.querySelector('#titleinput').value
@@ -30,36 +32,63 @@ function addBookToLibrary() {
 }
 
 function createBook(obj){
-    let book = document.createElement('div')
-    let sub = document.createElement('div')
-    let sub2 = document.createElement('div')
-    let sub3 = document.createElement('div')
-    let sub4 = document.createElement('div')
-    let sub5 = document.createElement('div')
-    let sub6 = document.createElement('input')
-    let del = document.createElement('button')
-    del.setAttribute('data', this.title)
-    let sub7 = document.createElement('div')
-    sub6.setAttribute('type', 'checkbox')
+
     let bookarea = document.querySelector('#bookarea')
+
+    let book = document.createElement('div')
+   
     book.classList.add('book')
     bookarea.appendChild(book)
+
+    let sub = document.createElement('div')
     sub.innerHTML = obj.title
-    sub2.innerHTML = obj.author
-    sub3.innerHTML = obj.pages + ' ' + 'pages'
-    sub5.innerHTML = 'Read'
-    del.innerHTML = '&times;'
-    sub4.classList.add('read')
     sub.classList.add('booktitle')
-    sub7.classList.add('readdel')
-    del.classList.add('deletebutton')
     book.appendChild(sub)
+
+    let sub2 = document.createElement('div')
+    sub2.innerHTML = obj.author
     book.appendChild(sub2)
+
+    let sub3 = document.createElement('div')
+    sub3.innerHTML = obj.pages + ' ' + 'pages'
     book.appendChild(sub3)
+
+    let sub4 = document.createElement('div')
+    sub4.classList.add('read')
     book.appendChild(sub4)
+
+    this.del = document.createElement('button')
+    this.del.innerHTML = '&times;'
+    del.classList.add('deletebutton')
+    this.del.setAttribute('data', myLibrary.indexOf(obj))
+    this.del.addEventListener('click', () => {
+        index = del.getAttribute('data')
+                myLibrary.splice(index, 1);
+                console.log(myLibrary)
+                clear()
+                refresh()
+    })
+    // document.querySelectorAll('.deletebutton').forEach(item => {
+    //     item.addEventListener('click', () => {
+    //         index = this.del.getAttribute('data')
+    //         myLibrary.splice(index, 1);
+    //         clear()
+    //         refresh()
+           
+    //     })
+    // } )
     sub4.appendChild(del)
+    
+    let sub7 = document.createElement('div')
+    sub7.classList.add('readdel')
     sub4.appendChild(sub7)
+
+    let sub5 = document.createElement('div')
+    sub5.innerHTML = 'Read'
     sub7.appendChild(sub5)
+
+    let sub6 = document.createElement('input')
+    sub6.setAttribute('type', 'checkbox')
     sub7.appendChild(sub6)
     
     };
@@ -90,16 +119,15 @@ document.querySelectorAll("input").forEach(input => {
 })   
 })
 
-document.querySelectorAll('.deletebutton').forEach(item => {
-    item.addEventListener('click', () => {
-        // let itemindex = this.getAttribute('data-item-index');
-        // myLibrary.splice(itemindex, 1);
-        myLibrary.splice(0,1)
-        clear()
-        refresh()
+// document.querySelectorAll('.deletebutton').forEach(item => {
+//     item.addEventListener('click', () => {
+//         index = this.del.getAttribute('data')
+//         myLibrary.splice(index, 1);
+//         clear()
+//         refresh()
        
-    })
-} )
+//     })
+// } )
 
 
 
