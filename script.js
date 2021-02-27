@@ -1,5 +1,5 @@
 let myLibrary = [
-    new Book('Harry Potter', 'J.K Rowling', '400', 'read'),
+    new Book('Harry Potter', 'J.K Rowling', '400', true),
     // new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
 ];
 
@@ -60,25 +60,25 @@ function createBook(obj){
 
     let sub6 = document.createElement('input')
     sub6.setAttribute('type', 'checkbox')
-    myLibrary.forEach((obj) => {
-        if (obj.read == 'read') {
-             sub6.checked = true;
-        }
-        else sub6.checked = false;
-    })
+    sub6.checked = obj.read
     sub6.addEventListener('change', () => {
         if (sub6.checked) {
-            obj.read = 'read'
+            obj.read = true
             console.log(obj.read)
             console.log(myLibrary)
         }
         else {
-            obj.read = 'not read'
+            obj.read = false
             console.log(obj.read)
             console.log(myLibrary)
         }
     })  
-
+  // myLibrary.forEach((obj) => {
+    //     if (obj.read == 'read') {
+    //          sub6.checked = true;
+    //     }
+    //     else sub6.checked = false;
+    // })
     sub7.appendChild(sub6)
     
     };
@@ -124,6 +124,7 @@ document.querySelectorAll("input").forEach(input => {
 })   
 })
 
+
 // document.querySelectorAll('.deletebutton').forEach(item => {
 //     item.addEventListener('click', () => {
 //         index = this.del.getAttribute('data')
@@ -144,3 +145,10 @@ document.querySelectorAll("input").forEach(input => {
 //     addBookToLibrary()
 // })
 
+function createCheck(){
+     let sub6 = document.createElement('input')
+     if (this.read == 'read'){
+        sub6.checked = true;    
+    }
+    else sub6.checked = false;
+}
