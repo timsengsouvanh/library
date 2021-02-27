@@ -1,7 +1,7 @@
 
 let myLibrary = [
     new Book('Harry Potter', 'J.K Rowling', '400', 'read'),
-    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
+    new Book('Fear and Loathing', 'Hunter S. Thompson', '200'),
     new Book('The Power of Now', 'Eckhart Tolle', '150', 'read')
 ];
 
@@ -89,6 +89,18 @@ function createBook(obj){
 
     let sub6 = document.createElement('input')
     sub6.setAttribute('type', 'checkbox')
+    sub6.addEventListener('change', () => {
+        if (sub6.checked) {
+            obj.read = 'read'
+            console.log(obj.read)
+            console.log(myLibrary)
+        }
+        else {
+            obj.read = 'not read'
+            console.log(obj.read)
+            console.log(myLibrary)
+        }
+    })
     sub7.appendChild(sub6)
     
     };
@@ -135,3 +147,14 @@ document.querySelectorAll("input").forEach(input => {
 //     addBookToLibrary()
 // })
 
+function readOrNot(obj) {
+    let sub6 = document.createElement('input')
+   if (obj.read == 'read') {
+    
+   }
+   else sub6.checked = false;
+// if (this.read === 'read'){
+//     sub6.checked = true;
+// }
+// else sub6.checked = false;
+}
