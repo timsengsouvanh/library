@@ -1,8 +1,6 @@
-
 let myLibrary = [
     new Book('Harry Potter', 'J.K Rowling', '400', 'read'),
-    new Book('Fear and Loathing', 'Hunter S. Thompson', '200'),
-    new Book('The Power of Now', 'Eckhart Tolle', '150', 'read')
+    // new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
 ];
 
 function Book(title, author, pages, read){
@@ -10,26 +8,7 @@ function Book(title, author, pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = ()=>{
-     console.log(this.title,',',this.author,',',this.pages,',', this.read)
     };
-}
-
-
-function addBookToLibrary() {
-    let title = document.querySelector('#titleinput').value
-    let author = document.querySelector('#authorinput').value
-    let pages = document.querySelector('#pagesinput').value
-    let newBook = new Book(title, author, pages)
-    myLibrary.push(newBook)
-    clear()
-    refresh()
-    document.querySelector('#modal').classList.remove('active') 
-    document.querySelector('#overlay').classList.remove('active')
-    document.querySelectorAll("input").forEach(input => {
-        input.value = ""
-    })   
-}
 
 function createBook(obj){
 
@@ -68,15 +47,7 @@ function createBook(obj){
                 clear()
                 refresh()
     })
-    // document.querySelectorAll('.deletebutton').forEach(item => {
-    //     item.addEventListener('click', () => {
-    //         index = this.del.getAttribute('data')
-    //         myLibrary.splice(index, 1);
-    //         clear()
-    //         refresh()
-           
-    //     })
-    // } )
+
     sub4.appendChild(del)
     
     let sub7 = document.createElement('div')
@@ -89,6 +60,12 @@ function createBook(obj){
 
     let sub6 = document.createElement('input')
     sub6.setAttribute('type', 'checkbox')
+    myLibrary.forEach((obj) => {
+        if (obj.read == 'read') {
+             sub6.checked = true;
+        }
+        else sub6.checked = false;
+    })
     sub6.addEventListener('change', () => {
         if (sub6.checked) {
             obj.read = 'read'
@@ -100,13 +77,29 @@ function createBook(obj){
             console.log(obj.read)
             console.log(myLibrary)
         }
-    })
+    })  
+
     sub7.appendChild(sub6)
     
     };
 
-function refresh(){
+function addBookToLibrary() {
+    let title = document.querySelector('#titleinput').value
+    let author = document.querySelector('#authorinput').value
+    let pages = document.querySelector('#pagesinput').value
+    let read = document.querySelector('input').isChecked
+    let newBook = new Book(title, author, pages, read)
+    myLibrary.push(newBook)
+    document.querySelector('#modal').classList.remove('active') 
+    document.querySelector('#overlay').classList.remove('active')
+    document.querySelectorAll("input").forEach(input => {
+        input.value = ""
+    })  
+    clear()
+    refresh() 
+}
 
+function refresh(){
 myLibrary.forEach(obj => {
     createBook(obj)
 })}
@@ -141,20 +134,13 @@ document.querySelectorAll("input").forEach(input => {
 //     })
 // } )
 
-
+// function readOrNot() {
+//     document.querySelectorAll('input').forEach((e) => {
+//     e.checked = true;
+//     }
+//     )}
 
 // document.querySelector('#modal-add-book').addEventListener('click', () => {
 //     addBookToLibrary()
 // })
 
-function readOrNot(obj) {
-    let sub6 = document.createElement('input')
-   if (obj.read == 'read') {
-    
-   }
-   else sub6.checked = false;
-// if (this.read === 'read'){
-//     sub6.checked = true;
-// }
-// else sub6.checked = false;
-}
