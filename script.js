@@ -1,6 +1,6 @@
 let myLibrary = [
     new Book('Harry Potter', 'J.K Rowling', '400', true),
-    // new Book('Fear and Loathing', 'Hunter S. Thompson', '200', 'read'),
+    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', true),
 ];
 
 function Book(title, author, pages, read){
@@ -9,6 +9,8 @@ function Book(title, author, pages, read){
     this.pages = pages;
     this.read = read;
     };
+
+
 
 function createBook(obj){
 
@@ -73,21 +75,17 @@ function createBook(obj){
             console.log(myLibrary)
         }
     })  
-  // myLibrary.forEach((obj) => {
-    //     if (obj.read == 'read') {
-    //          sub6.checked = true;
-    //     }
-    //     else sub6.checked = false;
-    // })
     sub7.appendChild(sub6)
     
     };
 
+
+//adds new book via add book modal, fires when clicking add book on modal    
 function addBookToLibrary() {
     let title = document.querySelector('#titleinput').value
     let author = document.querySelector('#authorinput').value
     let pages = document.querySelector('#pagesinput').value
-    let read = document.querySelector('input').isChecked
+    let read = document.querySelector('#modal-check').checked
     let newBook = new Book(title, author, pages, read)
     myLibrary.push(newBook)
     document.querySelector('#modal').classList.remove('active') 
@@ -99,18 +97,24 @@ function addBookToLibrary() {
     refresh() 
 }
 
+
+//loads books
 function refresh(){
 myLibrary.forEach(obj => {
     createBook(obj)
 })}
 
+//initial load
 refresh()
 
-
+//clears books
 function clear(){
     document.querySelectorAll('.book').forEach(book => book.remove(''));
 }
 
+
+
+//MODAL event listeners
 document.querySelector('#add').addEventListener('click', () => {
 document.querySelector('#modal').classList.add('active') 
 document.querySelector('#overlay').classList.add('active')   
@@ -123,32 +127,3 @@ document.querySelectorAll("input").forEach(input => {
     input.value = ""
 })   
 })
-
-
-// document.querySelectorAll('.deletebutton').forEach(item => {
-//     item.addEventListener('click', () => {
-//         index = this.del.getAttribute('data')
-//         myLibrary.splice(index, 1);
-//         clear()
-//         refresh()
-       
-//     })
-// } )
-
-// function readOrNot() {
-//     document.querySelectorAll('input').forEach((e) => {
-//     e.checked = true;
-//     }
-//     )}
-
-// document.querySelector('#modal-add-book').addEventListener('click', () => {
-//     addBookToLibrary()
-// })
-
-function createCheck(){
-     let sub6 = document.createElement('input')
-     if (this.read == 'read'){
-        sub6.checked = true;    
-    }
-    else sub6.checked = false;
-}
