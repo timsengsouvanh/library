@@ -10,10 +10,7 @@ function Book(title, author, pages, read){
     this.read = read;
     };
 
-
-
 function createBook(obj){
-
     let bookarea = document.querySelector('#bookarea')
 
     let book = document.createElement('div')
@@ -79,7 +76,6 @@ function createBook(obj){
     
     };
 
-
 //adds new book via add book modal, fires when clicking add book on modal    
 function addBookToLibrary() {
     let title = document.querySelector('#titleinput').value
@@ -97,7 +93,6 @@ function addBookToLibrary() {
     refresh() 
 }
 
-
 //loads books
 function refresh(){
 myLibrary.forEach(obj => {
@@ -111,8 +106,6 @@ refresh()
 function clear(){
     document.querySelectorAll('.book').forEach(book => book.remove(''));
 }
-
-
 
 //MODAL event listeners
 document.querySelector('#add').addEventListener('click', () => {
