@@ -60,14 +60,11 @@ button:hover {
 
 
 #bookarea {
-    /* border: 1px solid black; */
     height: 80%;
     padding: 70px 0px 15px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    /* display: flex;
-    justify-content: space-around; */
 }
 
 .book {
@@ -79,14 +76,12 @@ button:hover {
     justify-content: space-evenly;
     width: 150px;
     height: 200px;
-    /* border: 1px solid black; */
     background-color: #f76C6C;
     border-radius: 10px;
 }
 
 .booktitle {
     font-size: 1.4em;
-    /* border: 2px solid black; */
     font-weight: 600;
 }
 
