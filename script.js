@@ -1,14 +1,17 @@
-let myLibrary = [
-    new Book('Harry Potter', 'J.K Rowling', '400', true),
-    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', true),
-];
 
-function Book(title, author, pages, read){
+class Book {
+     constructor(title, author, pages, read){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     };
+}
+
+let myLibrary = [
+    new Book('Harry Potter', 'J.K Rowling', '400', true),
+    new Book('Fear and Loathing', 'Hunter S. Thompson', '200', true),
+];
 
 function createBook(obj){
     let bookarea = document.querySelector('#bookarea')
